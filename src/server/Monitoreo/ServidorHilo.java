@@ -1,4 +1,4 @@
-package serverMonitoreo;
+package server.Monitoreo;
 import java.io.*;
 import java.net.*;
 import java.util.logging.*;
