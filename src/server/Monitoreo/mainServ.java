@@ -2,44 +2,42 @@ package server.Monitoreo;
 import java.io.*;
 import java.net.*;
 import java.util.Vector;
-import dispatcher.ServidorHilo;
+
 
 public class mainServ {
-
+	public static final String ipServ1 = "100.10.10.1";
+	public static final String ipServ2 = "100.10.10.2";
+	public static final String ipServ3 = "100.10.10.3";
+	
     public static void main(String args[]) throws IOException {
     	
-    	public static final Short ipServ1 = 270;
-    	public static final Short ipServ2 = 270;
-    	public static final Short ipServ3 = 270;
+ 
     	
-    	int idSession1, idSession2, idSession3;
+//    	int idSession1, idSession2, idSession3;
     	
-    	Vector<Servidor> servidores;
+    	Vector<Thread> servidores = new Vector<Thread>(); // 3 servidores iniciales de monitoreo
+    	
     	System.out.print("Inicializando servidores de monitoreo ");
-    	ServerSocket sockMonitoreo1 = new ServerSocket(5001);
+    	ServerSocket sockMonitoreo1 = new ServerSocket(5001); // crea los socketServer
     	ServerSocket sockMonitoreo2  = new ServerSocket(5002);
     	ServerSocket sockMonitoreo3 = new ServerSocket(5003);
     	
-		Servidor servMomit1 = Servidor(sockMonitoreo1);
-		Servidor servMonit2 = Servidor(sockMonitoreo2);
-		Servidor servMonit3 = Servidor (sockMonitoreo3);
+    
+    	
+		Thread servMomit1 = new ServidorMonitoreo(sockMonitoreo1, ipServ1); // crea los servidores
+		Thread servMonit2 = new ServidorMonitoreo (sockMonitoreo2, ipServ2);
+		Thread servMonit3 = new ServidorMonitoreo (sockMonitoreo3, ipServ3);
 		
+		servidores.add(servMomit1); // agrega al vector
+    	servidores.add(servMonit2);
+    	servidores.add(servMonit3);
 		
-		
-		
-    	
-		
-    	servidores.add(arg0)
-    	
+		servMomit1.start(); // los inicia
+		servMonit2.start();
+		servMonit3.start();
+				
     	
     	
-    	
-    	
-    	
-    	
-    	
-        
-        
-        
+    
            }
 }

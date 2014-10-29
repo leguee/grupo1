@@ -45,10 +45,11 @@ public class ServidorHilo extends Thread {
         String click = "";
         try {
             click = dis.readUTF(); 
-            if(click.equals("hola")){
-                System.out.println("El cliente con idSesion "+this.idSessio+" saluda");
-                dos.writeUTF("adios");
-            }
+            
+            //TODO agregar que le llega el chorizo lo pasa por el parser, y lo devuelve en forma de Click
+            
+            System.out.println("El cliente con idSesion "+this.idSessio+" saluda");
+            dos.writeUTF("adios");
 
         } catch (IOException ex) {
             Logger.getLogger(ServidorHilo.class.getName()).log(Level.SEVERE, null, ex);
