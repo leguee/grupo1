@@ -6,6 +6,7 @@ import java.util.logging.*;
 
 class Browser extends Thread {
 
+	//PUTOOOOOOOOOOOOOOOOOOOOOOO
     protected Socket sk;
     protected DataOutputStream dos;
     protected DataInputStream dis;
