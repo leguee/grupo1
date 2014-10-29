@@ -9,7 +9,16 @@ public class ServidorHilo extends Thread {
     private Socket socket;
     private DataOutputStream dos;
     private DataInputStream dis;
-    private int idSessio;
+    
+    public Socket getSocket() {
+		return socket;
+	}
+
+	public void setSocket(Socket socket) {
+		this.socket = socket;
+	}
+
+	private int idSessio;
 
     public ServidorHilo(Socket socket, int id) {
         this.socket = socket;
@@ -22,7 +31,11 @@ public class ServidorHilo extends Thread {
         }
     }
 
-    public void desconnectar() {
+    public ServidorHilo() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void desconnectar() {
         try {
             socket.close();
         } catch (IOException ex) {
@@ -32,10 +45,10 @@ public class ServidorHilo extends Thread {
 
     @Override
     public void run() {
-        String accion = "";
+        String click = "";
         try {
-            accion = dis.readUTF();
-            if(accion.equals("hola")){
+            click = dis.readUTF(); 
+            if(click.equals("hola")){
                 System.out.println("El cliente con idSesion "+this.idSessio+" saluda");
                 dos.writeUTF("adios");
             }

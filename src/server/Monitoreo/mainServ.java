@@ -5,7 +5,7 @@ import java.util.logging.*;
 
 import dispatcher.ServidorHilo;
 
-public class Servidor {
+public class mainServ {
 
     public static void main(String args[]) throws IOException {
 
@@ -25,7 +25,7 @@ public class Servidor {
             }
 
         } catch (IOException ex) {
-            Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(mainServ.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

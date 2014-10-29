@@ -18,24 +18,24 @@ class Browser extends Thread {
     @Override
     public void run() {
         try {
-            sk = new Socket("127.0.0.1", 10578);
+            sk = new Socket("127.0.0.1",5000);
             dos = new DataOutputStream(sk.getOutputStream());
             dis = new DataInputStream(sk.getInputStream());
             
             ///////////////////////////LEE DE UN ARCHIVO LINEA POR LINEA///////////////////////////////////// 
-            File f = new File( "C:texto.txt" );
-            BufferedReader entrada;
-            try {
-            entrada = new BufferedReader( new FileReader( f ) );
-            String linea;
-            while(entrada.ready()){
-            	linea = entrada.readLine();
-            	System.out.println(id + "envia click" );
-            	dos.writeUTF(linea);
-            }
-            }catch (IOException e) {
-            e.printStackTrace();
-            }
+//            File f = new File( "C:texto.txt" );
+//            BufferedReader entrada;
+//            try {
+//            entrada = new BufferedReader( new FileReader( f ) );
+//            String linea;
+//            while(entrada.ready()){
+//            	linea = entrada.readLine();
+//            	System.out.println(id + "envia click" );
+//            	dos.writeUTF(linea);
+//            }
+//            }catch (IOException e) {
+//            e.printStackTrace();
+//            }
             /////////////////////////////////////////////////////////////////////////////////////////////////
             
             String respuesta="";
