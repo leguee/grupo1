@@ -1,0 +1,23 @@
+package Clientes;
+
+import java.util.ArrayList;
+
+public class Browser {
+
+    public static void main(String[] args) {
+    	
+        ArrayList<Thread> clients = new ArrayList<Thread>();
+        
+        for (int i = 0; i < 5; i++)
+            clients.add(new Peticion(i)); //AGREGO 5 PERSONAS
+
+        for (Thread thread : clients) { //RECORRO LAS 5 PERSONAS
+            thread.start();
+            try {
+				Thread.sleep(5000); //DUERMO CADA PERSONA
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+        }
+    }
+}
