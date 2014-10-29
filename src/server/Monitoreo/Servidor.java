@@ -3,7 +3,7 @@ import java.io.*;
 import java.net.*;
 import java.util.logging.*;
 
-import dispatcher.ServidorHilo;
+import ServidorDNS.SerDNSHilo;
 
 public class Servidor {
 

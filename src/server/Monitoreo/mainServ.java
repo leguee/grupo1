@@ -3,16 +3,16 @@ import java.io.*;
 import java.net.*;
 import java.util.logging.*;
 
-import dispatcher.ServidorHilo;
+import ServidorDNS.SerDNSHilo;
 
 public class mainServ {
 
     public static void main(String args[]) throws IOException {
 
-    	vector <>
-        System.out.print("Inicializando servidores de monitoreo ");
+    	//vector <>
+        //System.out.print("Inicializando servidores de monitoreo ");
         
         
         
-           }
+    }
 }
