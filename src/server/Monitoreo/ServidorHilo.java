@@ -31,9 +31,6 @@ public class ServidorHilo extends Thread {
         }
     }
 
-    public ServidorHilo() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public void desconnectar() {
         try {
