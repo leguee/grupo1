@@ -4,63 +4,33 @@ import java.net.*;
 import java.util.logging.*;
 
 import server.Monitoreo.ServidorHilo;
+import server.procesamiento.Servidor;
 
-public class ServidorMonitoreo extends Thread {
+public class ServidorMonitoreo {
 
-    
-	 	private String ip;
-	 	private ServerSocket ss;
-    
+    public static void main(String args[]) throws IOException {
 
-		public ServidorMonitoreo(ServerSocket sSocket,String ip) {
-			this.ip = ip;
-			this.ss = sSocket;
-		}
+        ServerSocket ss;
+        String ip = "172.0.0.1"; //  TODO poner la ip de la pc donde va a ser ejecutado este main 
+        System.out.print("Inicializando servidor... " + ip); 
+        try {
+            ss = new ServerSocket(5001);
+            System.out.println("\t[OK]");
+            int idSession = 0;
+            while (true) {
+                Socket socket;
+                socket = ss.accept();
+                System.out.println("Nueva conexión entrante: "+socket);
+                ((ServidorHilo) new ServidorHilo(socket, idSession)).start();
+                idSession++;
+            }
 
-       
-
-		
-		public void run() {
-			  try {
-		          
-		        	System.out.println("Inicializando servidor de monitoreo.. " + ip);
-		            System.out.println("\t[OK]");
-		            int idSession = 0;
-		            while (true) {
-		                Socket socket;
-		                socket = ss.accept();
-		                System.out.println("Nueva conexión entrante: "+socket);
-		                ((ServidorHilo) new ServidorHilo(socket, idSession)).start();
-		                idSession++;
-		            }
-
-		        } catch (IOException ex) {
-		            Logger.getLogger(ServidorMonitoreo.class.getName()).log(Level.SEVERE, null, ex);
-		        }
-		}
-
-
-
-
-
-//		public void start() {
-//		
-//        try {
-//          
-//        	System.out.println("Inicializando servidor de monitoreo.. " + ip);
-//            System.out.println("\t[OK]");
-//            int idSession = 0;
-//            while (true) {
-//                Socket socket;
-//                socket = ss.accept();
-//                System.out.println("Nueva conexión entrante: "+socket);
-//                ((ServidorHilo) new ServidorHilo(socket, idSession)).start();
-//                idSession++;
-//            }
-//
-//        } catch (IOException ex) {
-//            Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//		}
+        } catch (IOException ex) {
+            Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+	
+	
+	
     
 }
