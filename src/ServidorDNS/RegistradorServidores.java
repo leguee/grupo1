@@ -15,23 +15,23 @@ public class RegistradorServidores implements Runnable{
 	
 	public RegistradorServidores(Vector<String> direcciones) {
 		this.direcciones=direcciones;
+	}
+
+	@Override
+	public void run() {
 		try {
 			ss = new ServerSocket(10579);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	public void run() {
 		while (true){
 			Socket sk;
 			try {
 				sk = ss.accept();
 				DataInputStream dis = new DataInputStream(sk.getInputStream());
-				String ipServidor = dis.readUTF();
-				((RegistradorServidorHilo) new RegistradorServidorHilo(ipServidor,direcciones)).run();
+				String ipServidorEntrante = dis.readUTF();
+				((RegistradorServidorHilo) new RegistradorServidorHilo(ipServidorEntrante,direcciones)).run();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

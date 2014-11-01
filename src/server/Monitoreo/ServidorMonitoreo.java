@@ -29,7 +29,7 @@ public class ServidorMonitoreo {
     	// ip maquina actual
     	InetAddress ipMia=InetAddress.getLocalHost();
         ServerSocket ss;
-        System.out.print("Inicializando servidor... " + ipMia.getHostName());
+        System.out.print("Inicializando servidor... " + ipMia.getHostAddress());
         registrarServidor(ipMia);
         try {
             ss = new ServerSocket(5001);
