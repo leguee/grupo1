@@ -8,6 +8,7 @@ public class Click {
 	private String link;
 	private String ip;
 	
+	//return fecha
 	public String getFecha() {
 		return fecha;
 	}
