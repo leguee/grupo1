@@ -22,7 +22,6 @@ public class Parser {
 		for(String e: tokens){
 			e. trim();
 			srtg.add(e);
-			System.out.println(e+ ",");
 		}
 		/////
 		

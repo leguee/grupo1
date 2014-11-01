@@ -26,7 +26,7 @@ class Script extends Thread {
             String respuesta="";
             respuesta = dis.readUTF(); //ENTRADA
             System.out.println(id + " Servidor devuelve: " + respuesta);
-            
+     
             dis.close(); //CIERRO LA ENTRADA, SALIDA y el SOCKET
             dos.close();
             sk.close();

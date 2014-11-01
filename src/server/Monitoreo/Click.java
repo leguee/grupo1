@@ -49,4 +49,13 @@ public class Click {
 	
 	}
 	
+	public void print () {
+		System.out.println("el click contiene estos datos que van a ser almacenados en la bd..... "  );
+		System.out.println("ip: "  + ip );
+		System.out.println("link: "  + link );
+		System.out.println("browser: "  + browser );
+		System.out.println("so: "  + so );
+		System.out.println("hora: "  + hora );
+		System.out.println("fecha: "  + fecha );
+	}
 }
