@@ -12,9 +12,13 @@ public class ServidorMonitoreo {
 
         ServerSocket ss;
         String ip = "172.0.0.1"; //  TODO poner la ip de la pc donde va a ser ejecutado este main 
+        String ipDns = "172.0.0.1";// Harcodear ipDns
         System.out.print("Inicializando servidor... " + ip); 
         try {
             ss = new ServerSocket(5001);
+            // Inicializacion de heartbeat
+            Heartbeat hear = new Heartbeat(ipDns);
+            hear.run();
             System.out.println("\t[OK]");
             int idSession = 0;
             while (true) {
