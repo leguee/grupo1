@@ -11,14 +11,21 @@ public class SerDNS {
 	private static Vector<String> direcciones;
 	private static int idSer;
 	
+	// Puerto por el cual se registran los servidores
+	private int puertoServidores = 10579;
+	
+	private void regitrarServidor(){
+		dfafds
+	}
+	
     public static void main(String args[]) throws IOException {
     	
     	direcciones = new Vector<String>();
     	idSer=0;
     	
-    	direcciones.addElement("100.10.10.1");
-    	direcciones.addElement("100.10.10.2");
-    	direcciones.addElement("100.10.10.3");
+    	//direcciones.addElement("100.10.10.1");
+    	//direcciones.addElement("100.10.10.2");
+    	//direcciones.addElement("100.10.10.3");
     	
         System.out.print("Inicializando servidor... ");
         try {

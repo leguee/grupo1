@@ -10,10 +10,13 @@ public class Heartbeat implements Runnable {
 	private Socket sk;
     private DataOutputStream dos;
     private String mensaje;
+    private int puerto;
 	
-	public Heartbeat(String ip) {
+	public Heartbeat(String ip,int puerto) {
 		this.ip = ip;
 		this.mensaje = ip;
+		this.puerto = puerto;
+		
 	}
 	
 	@Override
@@ -35,7 +38,7 @@ public class Heartbeat implements Runnable {
 			} catch (IOException | InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}	
+			}
 		}
 
 	}
