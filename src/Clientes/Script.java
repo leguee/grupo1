@@ -17,7 +17,7 @@ class Script extends Thread {
 
     public void run() {
         try {
-            sk = new Socket("127.0.0.1", 10578);
+            sk = new Socket("192.168.0.12", 10578);
             dos = new DataOutputStream(sk.getOutputStream()); //LE DOY LAS ENTRADAS Y SALIDAS DEL SOCKET
             dis = new DataInputStream(sk.getInputStream());
             

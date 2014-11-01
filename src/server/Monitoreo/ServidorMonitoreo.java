@@ -8,7 +8,7 @@ import server.procesamiento.Servidor;
 
 public class ServidorMonitoreo {
 	
-	private static String ipDns = "";// TODO Harcodear ipDns
+	private static String ipDns = "192.168.0.12";// TODO Harcodear ipDns
 	private static DataOutputStream registroServidor;
 	//System.out.println("IP of my system is := "+IP.getHostAddress());
 	
@@ -26,10 +26,10 @@ public class ServidorMonitoreo {
 
     public static void main(String args[]) throws IOException {
 
-    	// ip maquina actual
     	InetAddress ipMia=InetAddress.getLocalHost();
         ServerSocket ss;
-        System.out.print("Inicializando servidor... " + ipMia.getHostName());
+        //String ip = "172.0.0.1"; //  TODO poner la ip de la pc donde va a ser ejecutado este main 
+        System.out.print("Inicializando servidor... " + ipMia.getHostAddress());
         registrarServidor(ipMia);
         try {
             ss = new ServerSocket(5001);
