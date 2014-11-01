@@ -28,7 +28,10 @@ public class ServidorMonitoreo {
 
     	InetAddress ipMia=InetAddress.getLocalHost();
         ServerSocket ss;
+<<<<<<< HEAD
         //String ip = "172.0.0.1"; //  TODO poner la ip de la pc donde va a ser ejecutado este main 
+=======
+>>>>>>> origin/master
         System.out.print("Inicializando servidor... " + ipMia.getHostAddress());
         registrarServidor(ipMia);
         try {

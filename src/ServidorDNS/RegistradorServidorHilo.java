@@ -16,6 +16,7 @@ public class RegistradorServidorHilo implements Runnable{
 	public void run() {
 		synchronized (this.direcciones) {
 			this.direcciones.add(ip);
+			System.out.println("Agrego direccion"+ip);
 		}
 	}
 
