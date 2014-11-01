@@ -29,7 +29,7 @@ public class SerDNS {
             while (true) { //ESPERA CLIENTES
                 //System.out.println("Nueva conexión entrante: "+ (Socket)ss.accept());
             	System.out.println("idServidor"+idSer);
-                ((SerDNSHilo) new SerDNSHilo((Socket)ss.accept(), idSession, direcciones.elementAt(idSer%direcciones.size())) ).start(); //LE PASO EL SOCKET AL SERHILO, LO CREO Y LO RUNNEO
+                ((SerDNSHilo) new SerDNSHilo((Socket)ss.accept(), idSession, direcciones.elementAt(idSer%direcciones.size())) ).start(); //LE PASO EL SOCKET AL SERDNSHILO, LO CREO Y LO RUNNEO
                 idSession++;
                 idSer++;
             }

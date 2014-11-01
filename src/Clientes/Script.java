@@ -4,14 +4,14 @@ import java.io.*;
 import java.net.Socket;
 import java.util.logging.*;
 
-class Peticion extends Thread {
+class Script extends Thread {
 
     protected Socket sk;
     protected DataOutputStream dos;
     protected DataInputStream dis;
     private int id;
 
-    public Peticion(int id) {
+    public Script(int id) {
         this.id = id;
     }
 
@@ -31,7 +31,7 @@ class Peticion extends Thread {
             dos.close();
             sk.close();
         } catch (IOException ex) {
-            Logger.getLogger(Peticion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Script.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

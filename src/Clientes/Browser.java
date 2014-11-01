@@ -9,7 +9,7 @@ public class Browser {
         ArrayList<Thread> clients = new ArrayList<Thread>();
         
         for (int i = 0; i < 5; i++)
-            clients.add(new Peticion(i)); //AGREGO 5 PERSONAS
+            clients.add(new Script(i)); //AGREGO 5 PETICIONES
 
         for (Thread thread : clients) { //RECORRO LAS 5 PERSONAS
             thread.start();
