@@ -27,9 +27,9 @@ class Script extends Thread {
             respuesta = dis.readUTF(); //ENTRADA
             System.out.println(id + " Servidor devuelve: " + respuesta);
      
-            dis.close(); //CIERRO LA ENTRADA, SALIDA y el SOCKET
-            dos.close();
-            sk.close();
+            //dis.close(); //CIERRO LA ENTRADA, SALIDA y el SOCKET
+            //dos.close();
+            //sk.close();
         } catch (IOException ex) {
             Logger.getLogger(Script.class.getName()).log(Level.SEVERE, null, ex);
         }

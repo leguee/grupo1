@@ -16,7 +16,7 @@ public class ServidorMonitoreo {
 		try {
 			Socket sk = new Socket(ipDns, 10579);
 			registroServidor = new DataOutputStream(sk.getOutputStream());
-			registroServidor.writeUTF(ipMia.getHostName());
+			registroServidor.writeUTF(ipMia.getHostAddress());
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -26,9 +26,9 @@ public class ServidorMonitoreo {
 
     public static void main(String args[]) throws IOException {
 
+    	// ip maquina actual
     	InetAddress ipMia=InetAddress.getLocalHost();
         ServerSocket ss;
-        //String ip = "172.0.0.1"; //  TODO poner la ip de la pc donde va a ser ejecutado este main 
         System.out.print("Inicializando servidor... " + ipMia.getHostName());
         registrarServidor(ipMia);
         try {
